@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="d-flex">
+        <div class="form-group row mr-4">
+            <label for="exampleFormControlSelect1">select size</label>
+            <select class="form-control" [(ngModel)]="size" id="exampleFormControlSelect1">
+                <option value="">select</option>
+                <option *ngFor="let s of sizes" value="{{s}}">{{s}}</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="exampleFormControlInput1">Time Reserved</label>
+            <input type="text" class="form-control" [(ngModel)]="time" id="exampleFormControlInput1" placeholder="Enter time in (HH:MM:SS) ">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Table size</th>
+            <th scope="col">Location</th>
+            <th scope="col">Time</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of Reservedtables | filter:size:time ">
+            <td>{{t.size}}</td>
+            <td>{{t.location}}</td>
+            <td>{{t.Time}}</td>
+            <td>{{t.Description}}</td>
+           <tr>
+        </tbody>
+      </table>
+
+</div>
