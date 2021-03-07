@@ -37,12 +37,9 @@ export class TableFormComponent implements OnInit {
      
   }
 
-  selected(){
-    console.log("this is selected",this.tab);
-  }
 
   onsubmit(){
-    console.log(this.TableForm.value);
+
     if(this.TableForm.valid)
     {
       this.http.post(this.baseurl,this.TableForm.value).subscribe(_data=>{

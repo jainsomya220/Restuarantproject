@@ -6,9 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(Reservation:any,...args:any): any{
-    console.log("this is the value1",args[0]);
-    console.log("value 2",args[1]);
-    console.log("reservation is",Reservation);
+    
     if(!Reservation || (args[0] ==='' && args[1]===""))
     {
       return Reservation;
@@ -19,7 +17,6 @@ export class FilterPipe implements PipeTransform {
     }
     else if(args[1]==='')
     {
-      console.log("inside elsse");
       return Reservation.filter((Res:any) => Res.size.includes(args[0]));
     }
     else
